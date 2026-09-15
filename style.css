@@ -96,6 +96,7 @@ button {
     line-height: 78px;
     text-align: left;
     margin-bottom: 24px;
+
 }
 
 .hero__text{
@@ -106,6 +107,15 @@ button {
     line-height: 32px;
     text-align: left;
     margin-bottom: 48px;
+    
+}
+
+.hero__textmobile{
+    display: none;
+}
+
+.hero__textspan{
+    display: block;
 }
 
 .hero__span{
@@ -136,6 +146,42 @@ button {
 .hero__btn-link:hover{
     background-color: white;
     color: black;
+}
+
+.strip{
+    overflow: hidden;
+    width: 100%;
+}
+
+.strip__scrolling{
+    display: flex;
+    column-gap: 51px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(50px);
+    background: rgba(188, 236, 48, 1);
+    white-space: nowrap;
+    animation: scroll 20s linear infinite;
+    width: max-content;
+    min-height: 90px;
+    align-items: center;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.strip__gamenames{
+    color: rgba(32, 32, 39, 1);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 110%;
+    letter-spacing: 4%;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: max-content;
 }
 
 .stars-about {
@@ -211,12 +257,17 @@ button {
     display: none;
 }
 
+.about__gametext{
+    display: block;
+}
+
 .games{
     display: flex;
     flex-wrap: wrap;
     column-gap: 32px;
     position: relative;
     z-index: 1;
+    margin-bottom: 96px;
 }
 
 .game{
@@ -228,6 +279,14 @@ button {
     flex-direction: column;
     flex-wrap: wrap;
     gap: 16px;
+    transition: transform 0.3s ease;
+    z-index: 1;
+    position: relative;
+}
+
+.game:hover {
+    transform: scale(1.05);
+    z-index: 10;
 }
 
 .game__span{
@@ -303,10 +362,11 @@ button {
     padding-bottom: 144px;
     position: relative;
     overflow-x: hidden; 
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .games-list__heading{
-    padding-top: 96px;
     padding-bottom: 72px;
     color: rgba(255, 255, 255, 1);
     font-size: 64px;
@@ -335,7 +395,7 @@ button {
     flex-direction: row-reverse;
     align-items: flex-start;
     justify-content: space-between;
-    position: relative;
+    /*position: relative;*/
 }
 
 .games-list__container{
@@ -365,14 +425,13 @@ button {
     top: 5%;
 }
 
+.games-list__item:nth-child(2n){
+    flex-direction: row;
+}
+
 .star-pos-2 {
     top: 4%;
     left: 73%;
-}
-
-
-.games-list__item:nth-child(2n){
-    flex-direction: row;
 }
 
 .star-pos-3{
@@ -384,7 +443,6 @@ button {
     bottom: 1.5%;
     right: 19%;
 }
-
 
 .games-list__info{
     display: flex;
@@ -423,6 +481,11 @@ button {
     text-align: center;
 }
 
+.games-list__play-button:hover{
+    background-color: white;
+    color: black;
+}
+
 .games-list__image{
     width: 600px;
     height: 500px;
@@ -448,7 +511,18 @@ button {
     text-align: center;
 }
 
-@media (max-width: 430px){
+@media (hover: none) {
+    .game:hover {
+        transform: none; 
+    }
+
+    .hero__btn-link:hover{
+        background-color: rgba(32, 32, 39, 1);;
+        color: white;
+    }
+}
+
+@media (max-width: 1024px){
     .center{
         padding-left: 16px !important;
         padding-right: 16px !important;
@@ -505,12 +579,17 @@ button {
     }
 
     .hero__text{
+       display: none;
+    }
+
+    .hero__textmobile{
         color: rgba(32, 32, 39, 1);
         font-size: 16px;
         margin-bottom: 36px;
         line-height: 19px;
         text-align: center;
         font-weight: 400;
+        display: block;
     }
 
     .hero__span{
@@ -535,6 +614,28 @@ button {
     .hero__btn{
         display: flex;
         justify-content: center;
+    }
+
+    .strip__scrolling{
+        min-height: 51px;
+        column-gap: 27px;
+    }
+
+    .strip__gamenames{
+        color: rgba(32, 32, 39, 1);
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 110%;
+        letter-spacing: 4%;
+        text-align: left;
+        text-transform: uppercase;
+    }
+
+    .strip__gamelinks{
+        width: 19px;
+        height: 19px;
+        display: flex;
+        align-items: center;
     }
 
     .about__gamemobil{
@@ -591,6 +692,14 @@ button {
         height: 627px;
     }
 
+    .game__text{
+        display: block;
+    }
+
+    .game__card{
+        margin-bottom: 13px;
+    }
+
     .game__img{
         max-width: 343px;
         min-height: 285px;
@@ -598,6 +707,10 @@ button {
 
     .game__number{
         display: none;
+    }
+
+    .game__heading{
+        margin-left: 29px;
     }
 
     .game__spanmobile{
@@ -650,7 +763,7 @@ button {
     }
 
     .games-list{
-        display: none;
+        display: none; 
     }
 
     .stars-container{
