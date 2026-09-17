@@ -3,7 +3,7 @@
 Учебный проект с мини-играми на JavaScript.
 
 ## 🔗 Демо
-[Посмотреть сайт](https://js-mini-games.netlify.app/#guess)
+[Посмотреть сайт](https://js-mini-games.netlify.app/)
 
 ## 📎 Портфолио
 [Посмотреть все работы](https://your-finances.tilda.ws)
